@@ -5,5 +5,9 @@
         <p>Translated word: {$translatedWord}</p>
     {/if}
 
+    {if isset($errorMsg)}
+        <p>{$errorMsg}</p>
+    {/if}
+
     {control pigLatinForm}
 {/block}

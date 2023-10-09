@@ -24,10 +24,9 @@ class PigLatinTranslator
             $word = substr($word, 1);
         }
 
-        // If there was no consonant cluster, the word starts with a vowel
         if (empty($consonantCluster)) {
             return $word . '-' . self::PIG_LATIN_SUFFIX;
-        } else if (empty($word)) {
+        } elseif (empty($word)) {
             return $consonantCluster . '-' . self::PIG_LATIN_SUFFIX;
         } else {
             return $word . '-' . $consonantCluster . self::PIG_LATIN_SUFFIX;

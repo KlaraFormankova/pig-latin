@@ -32,8 +32,14 @@ final class HomePresenter extends Nette\Application\UI\Presenter
     public function pigLatinFormSubmit(Form $form, $values)
     {
         $inputWord = $values['inputWord'];
-        $translatedWord = $this->translator->translateToPigLatin($inputWord);
-
-        $this->template->translatedWord = $translatedWord;
+        $word = trim($inputWord);
+    
+        if (!preg_match('/^\w+$/', $word)) {
+            $errorMsg = "Invalid input. Please enter only one word with no spaces.";
+            $this->template->errorMsg = $errorMsg;
+        } else {
+            $translatedWord = $this->translator->translateToPigLatin($inputWord);
+            $this->template->translatedWord = $translatedWord;
+        }
     }
 }
