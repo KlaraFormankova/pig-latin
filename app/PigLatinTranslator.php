@@ -13,7 +13,7 @@ class PigLatinTranslator
         $consonantCluster = '';
 
         // Find the initial consonant cluster
-        while (!in_array(strtolower(substr($word, 0, 1)), $vowels)) {
+        while (!in_array(strtolower(substr($word, 0, 1)), $vowels) && !empty($word)) {
             $consonantCluster .= substr($word, 0, 1);
             $word = substr($word, 1);
         }
@@ -27,6 +27,8 @@ class PigLatinTranslator
         // If there was no consonant cluster, the word starts with a vowel
         if (empty($consonantCluster)) {
             return $word . '-' . self::PIG_LATIN_SUFFIX;
+        } else if (empty($word)) {
+            return $consonantCluster . '-' . self::PIG_LATIN_SUFFIX;
         } else {
             return $word . '-' . $consonantCluster . self::PIG_LATIN_SUFFIX;
         }
