@@ -8,7 +8,6 @@
 /composer.phar
 /composer.lock
 /vendor/
-/www/index.php
 
 # Ignore development and system-related files
 /.idea/
