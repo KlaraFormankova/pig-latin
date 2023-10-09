@@ -1,0 +1,43 @@
+# Nette-specific files and directories
+/app/config/config.local.neon
+/app/config/config.local.neon.neon
+/temp/*
+/log/*
+!/log/.gitkeep
+!/temp/.gitkeep
+/composer.phar
+/composer.lock
+/vendor/
+/www/index.php
+
+# Ignore development and system-related files
+/.idea/
+/.vscode/
+/.DS_Store
+/.phpstorm.meta.php
+
+# Environment-specific configuration files (if used)
+/app/config/config.dev.neon
+/app/config/config.test.neon
+/app/config/config.prod.neon
+
+# User uploads or generated files (customize this section)
+/www/uploads/
+/www/temp/
+/www/files/
+
+# Ignore user-specific files (e.g., IDE settings)
+/.editorconfig
+/.php_cs
+/.php_cs.cache
+/.php_cs.cache.lock
+/.php_cs.local
+/.php_cs.phpstorm.meta.php
+/.phpstorm.meta.php
+
+# Ignore sensitive files containing secrets or credentials (customize this section)
+/app/config/config.local.neon
+/app/config/config.local.neon.neon
+
+# Ignore Composer's installed packages
+/vendor/

@@ -1,0 +1,10 @@
+services:
+	- App\Router\RouterFactory::createRouter
+	- App\PigLatinTranslator
+
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Factory
+			- *Facade
